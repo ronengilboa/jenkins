@@ -24,7 +24,7 @@ resource "aws_instance" "jenkins" {
   connection {
     type = "ssh"
     user = "centos"
-    private_key = file("../aws/bynet.pem")
+    private_key = file("../aws/cert.pem")
     host = aws_instance.jenkins.public_dns
   }
   provisioner "remote-exec" {
